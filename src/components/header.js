@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BsCartDash } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
+import { GrFormClose } from "react-icons/gr";
 
 import "./header.scss";
 
 const Header = () => {
+  const [search, setSearch] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header>
       <div className="header">
@@ -16,15 +20,29 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search a Product"
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
           />
+          {search.length > 0 && (
+            <GrFormClose
+              onClick={() => setSearch("")}
+              className="header__search__empty"
+            />
+          )}
         </div>
 
         <div className="header__cart">
-          <BsCartDash />
+          <BsCartDash
+            onClick={() => setIsOpen(!isOpen)}
+            style={{ cursor: "pointer" }}
+          />
           <span>
-            <p>2</p>
+            <p>0</p>
           </span>
+
+          {isOpen && (
+            <div className="header__cart__preview">No Items in Cart</div>
+          )}
         </div>
       </div>
     </header>
