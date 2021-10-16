@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { BsCartDash } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { GrFormClose } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 import "./header.scss";
 
@@ -41,7 +42,14 @@ const Header = () => {
           </span>
 
           {isOpen && (
-            <div className="header__cart__preview">No Items in Cart</div>
+            <div className="header__cart__preview">
+              No Items in Cart
+              <div className="cart-link">
+                <Link onClick={() => setIsOpen(false)} to="/cart">
+                  Go to Cart
+                </Link>
+              </div>
+            </div>
           )}
         </div>
       </div>

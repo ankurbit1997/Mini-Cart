@@ -35,7 +35,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 0;
+    padding: 0.8rem 0;
 
     @media screen and (min-width: 900px) {
       padding: 1rem 0;
@@ -43,6 +43,7 @@ header {
 
     &__logo {
       font-size: 1.2rem;
+      cursor: pointer;
       @media screen and (min-width: 900px) {
         font-size: 1.5rem;
       }
@@ -70,11 +71,12 @@ header {
       }
 
       input {
+        font-family: "Poppins", sans-serif;
         width: 100%;
         border-radius: 20px;
         padding: 0.5rem 0.6rem;
         border: none;
-        font-weight: 200;
+        font-weight: 300;
         padding-left: 4rem;
         outline: none;
         font-size: 1rem;
@@ -97,7 +99,7 @@ header {
       &__preview {
         position: absolute;
         background-color: var(--color-secondary);
-        font-size: 1rem;
+        font-size: 0.8rem;
         width: 250px;
         right: -1rem;
         border-radius: 0.8rem;
@@ -105,6 +107,19 @@ header {
         top: 3rem;
         animation: cart 0.2s linear;
         text-align: center;
+
+        .cart-link {
+          margin-top: 1rem;
+          a {
+            text-decoration: none;
+            background-color: var(--color-dark);
+            color: var(--color-primary);
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 0.4rem 0.8rem;
+            border-radius: 1.8rem;
+          }
+        }
       }
 
       span {
