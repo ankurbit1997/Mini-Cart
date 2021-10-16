@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../components/loader";
+import Products from "../components/products";
 
 import { CartState } from "../context/CartContext";
 
@@ -17,15 +18,15 @@ const Home = () => {
       });
   }, [dispatch]);
 
-  console.log(loading, state);
-
   if (loading) {
     return <Loader />;
   }
 
+  const { products } = state;
+
   return (
     <div>
-      <h1>Hom-Page</h1>
+      <Products products={products} />
     </div>
   );
 };
