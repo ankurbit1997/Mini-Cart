@@ -15,7 +15,8 @@ const Home = () => {
       .then((data) => {
         dispatch({ type: "FETCH_PRODUCTS", payload: data });
         setLoading(false);
-      });
+      })
+      .catch((err) => console.log(err.message));
   }, [dispatch]);
 
   if (loading) {
@@ -25,8 +26,8 @@ const Home = () => {
   const { products } = state;
 
   return (
-    <div>
-      <Products products={products} />
+    <div className="home-page">
+      <Products products={products} dispatch={dispatch} />
     </div>
   );
 };
