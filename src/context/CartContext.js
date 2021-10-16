@@ -1,18 +1,21 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useReducer, useContext } from "react";
+import { cartReducer } from "./CartReducer";
 
 const Cart = createContext();
 
+const initialState = {
+  products: [],
+  cart: [],
+};
+
 const CartContext = ({ children }) => {
-  const [products, setProducts] = useState([]);
+  const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((products) => setProducts(products));
-  }, []);
+  return <Cart.Provider value={{ state, dispatch }}>{children}</Cart.Provider>;
+};
 
-  console.log(products);
-  return <Cart.Provider>{children}</Cart.Provider>;
+export const CartState = () => {
+  return useContext(Cart);
 };
 
 export default CartContext;
