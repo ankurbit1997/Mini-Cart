@@ -1,0 +1,62 @@
+.home-page {
+  @media screen and (min-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.filters {
+  display: none;
+  @media screen and (min-width: 900px) {
+    flex-basis: 22%;
+    display: block;
+    background-color: var(--color-filter);
+    max-height: calc(100vh - 80px);
+    position: sticky;
+    top: 80px;
+    padding: 4rem 2rem;
+    padding-top: 8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    position: relative;
+    &::after {
+      content: "";
+      height: 4px;
+      background-color: var(--color-dark);
+      width: 80%;
+      position: absolute;
+      top: -4rem;
+      left: 0;
+    }
+  }
+
+  input {
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+  label {
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: 1.1rem;
+    border: none;
+    color: white;
+    background-color: var(--color-dark);
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    svg {
+      filter: invert(1);
+      font-size: 1.5rem;
+      margin-left: 0.4rem;
+    }
+  }
+}

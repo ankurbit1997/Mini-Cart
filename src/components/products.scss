@@ -2,9 +2,8 @@
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
-  float: right; // remove it later
   gap: 2rem;
-  padding: 2rem 0.8rem;
+  padding: 2rem 1.5rem;
   @media screen and (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
     gap: 4rem 1rem;
@@ -13,6 +12,7 @@
   @media screen and (min-width: 900px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 80%;
+    flex-basis: 75%;
   }
 
   .single-product {

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../components/loader";
 import Products from "../components/products";
+import Header from "../components/header";
 
 import { CartState } from "../context/CartContext";
+import Filters from "../components/filters";
 
 const Home = () => {
   const { state, dispatch } = CartState();
@@ -26,8 +28,12 @@ const Home = () => {
   const { products } = state;
 
   return (
-    <div className="home-page">
-      <Products products={products} dispatch={dispatch} />
+    <div>
+      <Header />
+      <div className="home-page">
+        <Filters />
+        <Products products={products} dispatch={dispatch} />
+      </div>
     </div>
   );
 };
