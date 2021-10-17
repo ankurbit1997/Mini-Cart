@@ -17,19 +17,19 @@ const Filters = () => {
           <input type="radio" label="descending" name="group1" />
           <label>Price High To Low</label>
         </div>
-        <div>
+        <div className="desktop-filters">
           <input type="checkbox" label="men's Clothing" />
           <label>Men's Clothing</label>
         </div>
-        <div>
+        <div className="desktop-filters">
           <input type="checkbox" label="women's Clothing" />
           <label>Women's Clothing</label>
         </div>
-        <div>
+        <div className="desktop-filters">
           <input type="checkbox" label="electronics" />
           <label>Electronics</label>
         </div>
-        <div>
+        <div className="desktop-filters">
           <input type="checkbox" label="jewelery" />
           <label>Jewelery</label>
         </div>

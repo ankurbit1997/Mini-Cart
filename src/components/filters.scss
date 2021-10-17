@@ -6,6 +6,9 @@
 }
 
 .filters {
+  display: block;
+  background-color: var(--color-filter);
+  padding: 2rem;
   display: none;
   @media screen and (min-width: 900px) {
     flex-basis: 22%;
@@ -24,6 +27,7 @@
     text-transform: uppercase;
     margin-bottom: 2rem;
     position: relative;
+    display: none;
     &::after {
       content: "";
       height: 4px;
@@ -33,14 +37,27 @@
       top: -4rem;
       left: 0;
     }
+    @media screen and (min-width: 900px) {
+      display: block;
+    }
   }
 
   input {
     margin-right: 1rem;
     margin-bottom: 2rem;
   }
+
+  .desktop-filters {
+    display: none;
+    @media screen and (min-width: 900px) {
+      display: block;
+    }
+  }
   label {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    @media screen and (min-width: 900px) {
+      font-size: 1.2rem;
+    }
   }
   button {
     font-size: 1.1rem;
@@ -53,6 +70,10 @@
     display: flex;
     align-items: center;
     margin-top: 2rem;
+    display: none;
+    @media screen and (min-width: 900px) {
+      display: block;
+    }
     svg {
       filter: invert(1);
       font-size: 1.5rem;
