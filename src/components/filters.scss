@@ -21,7 +21,9 @@
     padding: 4rem 2rem;
     padding-top: 8rem;
   }
-
+  .rating {
+    align-items: center;
+  }
   h2 {
     font-size: 1.4rem;
     font-weight: normal;
@@ -81,7 +83,7 @@
     }
     &:hover {
       svg {
-        transform: rotate(360deg);
+        transform: rotate(180deg);
       }
     }
     svg {

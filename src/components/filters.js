@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { GrFormClose } from "react-icons/gr";
 
 import "./filters.scss";
+import Rating from "./rating";
 
 const Filters = () => {
+  const [rate, setRate] = useState(0);
   return (
     <div className="filters">
       <h2>Filters</h2>
@@ -32,6 +34,10 @@ const Filters = () => {
         <div className="desktop-filters">
           <input type="checkbox" label="jewelery" />
           <label>Jewelery</label>
+        </div>
+        <div className="desktop-filters rating">
+          <label style={{ marginRight: "1rem" }}>Rating</label>
+          <Rating rating={rate} onClick={setRate} />
         </div>
         <button>
           Clear All <GrFormClose />
