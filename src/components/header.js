@@ -5,11 +5,17 @@ import { FiSearch } from "react-icons/fi";
 import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
+import { CartState } from "../context/CartContext";
+
 import "./header.scss";
 
 const Header = () => {
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+
+  const {
+    state: { cart },
+  } = CartState();
 
   return (
     <header>
@@ -38,7 +44,7 @@ const Header = () => {
             style={{ cursor: "pointer" }}
           />
           <span>
-            <p>0</p>
+            <p>{cart.length}</p>
           </span>
 
           {isOpen && (

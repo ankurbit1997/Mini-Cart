@@ -16,6 +16,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 80%;
     flex-basis: 75%;
+    padding-right: 5rem;
   }
 
   .single-product {
@@ -54,6 +55,9 @@
         border-radius: 1rem;
         margin-top: 1rem;
         cursor: pointer;
+        &.remove-from-cart {
+          background-color: var(--color-secondary);
+        }
       }
     }
   }
