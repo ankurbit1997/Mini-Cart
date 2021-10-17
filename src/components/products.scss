@@ -10,6 +10,9 @@
     padding: 4rem 1rem;
   }
   @media screen and (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media screen and (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 80%;
     flex-basis: 75%;
@@ -50,6 +53,7 @@
         font-family: "Poppins", sans-serif;
         border-radius: 1rem;
         margin-top: 1rem;
+        cursor: pointer;
       }
     }
   }

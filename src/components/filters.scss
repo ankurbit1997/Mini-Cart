@@ -17,6 +17,7 @@
     max-height: calc(100vh - 80px);
     position: sticky;
     top: 80px;
+    min-width: 270px;
     padding: 4rem 2rem;
     padding-top: 8rem;
   }
@@ -71,10 +72,20 @@
     align-items: center;
     margin-top: 2rem;
     display: none;
+    cursor: pointer;
+    transition: all 0.4s linear;
+    width: 100%;
+    justify-content: center;
     @media screen and (min-width: 900px) {
-      display: block;
+      display: flex;
+    }
+    &:hover {
+      svg {
+        transform: rotate(360deg);
+      }
     }
     svg {
+      transition: all 0.4s linear;
       filter: invert(1);
       font-size: 1.5rem;
       margin-left: 0.4rem;
