@@ -21,12 +21,6 @@ const Home = () => {
       .catch((err) => console.log(err.message));
   }, [dispatch]);
 
-  useEffect(() => {
-    const carts = JSON.parse(localStorage.getItem("cart"));
-    console.log(carts);
-    dispatch({ type: "FETCH_CART", payload: carts });
-  }, [dispatch]);
-
   if (loading) {
     return <Loader />;
   }
