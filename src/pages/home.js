@@ -21,11 +21,11 @@ const Home = () => {
       .catch((err) => console.log(err.message));
   }, [dispatch]);
 
+  const { products, cart } = state;
+
   if (loading) {
     return <Loader />;
   }
-
-  const { products, cart } = state;
 
   return (
     <div>

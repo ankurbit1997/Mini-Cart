@@ -18,8 +18,6 @@ export const cartReducer = (state, action) => {
         `Proctuct ${action.payload.id} Removed from cart`,
         TYPE_SUCCESS
       );
-      const existingItems = JSON.parse(localStorage.getItem("cart"));
-      console.log(existingItems);
       return {
         ...state,
         cart: state.cart.filter((c) => c.id !== action.payload.id),
