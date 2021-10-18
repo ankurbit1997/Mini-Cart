@@ -102,11 +102,11 @@ header {
         position: absolute;
         background-color: var(--color-secondary);
         font-size: 0.8rem;
-        width: 250px;
+        width: 300px;
         right: -1rem;
         border-radius: 0.8rem;
-        padding: 1.5rem 0.5rem;
-        top: 3rem;
+        padding: 1.5rem 1rem;
+        top: 4rem;
         animation: cart 0.2s linear;
         text-align: center;
 
@@ -121,6 +121,28 @@ header {
             padding: 0.4rem 0.8rem;
             border-radius: 1.8rem;
           }
+        }
+        &__label {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          margin-bottom: 1.2rem;
+          h4 {
+            font-weight: normal;
+          }
+        }
+      }
+
+      .preview-cart {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        margin-bottom: 0.8rem;
+        justify-items: center;
+        img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          object-fit: cover;
         }
       }
 

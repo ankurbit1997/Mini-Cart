@@ -49,7 +49,20 @@ const Header = () => {
 
           {isOpen && (
             <div className="header__cart__preview">
-              No Items in Cart
+              <div className="header__cart__preview__label">
+                <h4>Picture</h4>
+                <h4>Price</h4>
+                <h4>Id</h4>
+              </div>
+              {cart.length === 0
+                ? "No items in cart"
+                : cart.map((item, i) => (
+                    <div className="preview-cart" key={i}>
+                      <img src={item.image} alt={item.title} />
+                      <p>{item.id}</p>
+                      <p>${item.price}</p>
+                    </div>
+                  ))}
               <div className="cart-link">
                 <Link onClick={() => setIsOpen(false)} to="/cart">
                   Go to Cart
