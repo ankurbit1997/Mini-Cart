@@ -59,8 +59,8 @@ const Header = () => {
                 : cart.map((item, i) => (
                     <div className="preview-cart" key={i}>
                       <img src={item.image} alt={item.title} />
-                      <p>{item.id}</p>
                       <p>${item.price}</p>
+                      <p>{item.id}</p>
                     </div>
                   ))}
               <div className="cart-link">
