@@ -20,7 +20,7 @@ const Cart = () => {
         </div>
 
         {cart.map((product, i) => (
-          <div className="cart__list__products">
+          <div className="cart__list__products" key={i}>
             <img src={product.image} alt={product.title} />
             <p>${product.price}</p>
             <p>{product.qty || 1}</p>
