@@ -1,14 +1,25 @@
 .cart {
-  display: flex;
-  margin: 3rem;
+  margin: 1rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   min-height: 86vh;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: start;
+  @media screen and (min-width: 900px) {
+    display: flex;
+    margin: 3rem;
+    flex-direction: row;
+    justify-content: unset;
+  }
   &__list {
     background-color: white;
-    flex: 3;
-    padding: 4rem 2rem 4rem 6rem;
-    overflow-y: auto;
-    max-height: 80vh;
+    padding: 1.5rem;
+    @media screen and (min-width: 900px) {
+      flex: 3;
+      padding: 4rem 2rem 4rem 6rem;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
     &__label {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -35,7 +46,13 @@
   }
   &__total {
     background-color: var(--color-filter);
-    flex: 2;
-    padding: 4rem 6rem 4rem 2rem;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    @media screen and (min-width: 900px) {
+      flex: 2;
+      padding: 4rem 6rem 4rem 2rem;
+      position: unset;
+    }
   }
 }
