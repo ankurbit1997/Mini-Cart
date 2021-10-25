@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { GrFormClose } from "react-icons/gr";
 
@@ -6,7 +6,14 @@ import "./filters.scss";
 import Rating from "./rating";
 
 const Filters = () => {
-  const [rate, setRate] = useState(0);
+  const [rate, setRate] = useState(() => {
+    const rating = JSON.parse(localStorage.getItem("rating"));
+    return rating || 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("rating", JSON.stringify(rate));
+  }, [rate]);
   return (
     <div className="filters">
       <h2>Filters</h2>
