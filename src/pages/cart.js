@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { CartState } from "../context/CartContext";
 
@@ -13,7 +14,7 @@ const Cart = () => {
     <div className="cart">
       {cart.length === 0 ? (
         <p style={{ textAlign: "center", marginTop: "4rem", flex: "3" }}>
-          No products
+          No products <Link to="/">Go Home</Link>
         </p>
       ) : (
         <div className="cart__list">
