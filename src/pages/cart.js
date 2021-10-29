@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { CartState } from "../context/CartContext";
+import { BsFillBagCheckFill } from "react-icons/bs";
 
 import "./cart.scss";
 
@@ -36,7 +37,19 @@ const Cart = () => {
         </div>
       )}
 
-      <div className="cart__total">total</div>
+      <div className="cart__total">
+        <h2>cart total</h2>
+        {cart.length !== 0 ? (
+          <span>{cart.reduce((acc, cur) => acc + Number(cur.price), 0)}$</span>
+        ) : (
+          <span>0$</span>
+        )}
+        <p>Shipping excluded</p>
+
+        <button>
+          checkout <BsFillBagCheckFill />
+        </button>
+      </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@
   min-height: 86vh;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: start;
+  justify-content: flex-start;
   @media screen and (min-width: 900px) {
     display: flex;
     margin: 3rem;
@@ -49,10 +49,61 @@
     padding: 1.5rem;
     position: sticky;
     top: 0;
+    position: relative;
+
+    &::after {
+      @media screen and (min-width: 900px) {
+        content: "";
+        position: absolute;
+        height: 5px;
+        top: 5.5rem;
+        width: 70%;
+        left: 2rem;
+        background-color: var(--color-dark);
+      }
+    }
     @media screen and (min-width: 900px) {
       flex: 2;
       padding: 4rem 6rem 4rem 2rem;
-      position: unset;
+      position: relative;
+    }
+
+    h2 {
+      display: inline-block;
+      font-weight: normal;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      @media screen and (min-width: 900px) {
+        margin-top: 5.5rem;
+      }
+    }
+    span {
+      margin-left: 1rem;
+      font-size: 1.6rem;
+    }
+    p {
+      opacity: 0.8;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      @media screen and (min-width: 900px) {
+        margin-top: 1rem;
+      }
+    }
+    button {
+      margin-left: 2rem;
+      margin-top: 1.6rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 1.5rem;
+      border: none;
+      filter: invert(1);
+      width: 130px;
+      display: flex;
+      justify-content: space-between;
+      font-family: "Poppins", sans-serif;
+      opacity: 0.9;
+      cursor: pointer;
+      text-transform: uppercase;
     }
   }
 }
