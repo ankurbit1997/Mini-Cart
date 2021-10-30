@@ -5,6 +5,8 @@ import { FiSearch } from "react-icons/fi";
 import { GrFormClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
+import useOnClickOutside from "../hooks/useOnClickOutside";
+
 import { CartState } from "../context/CartContext";
 
 import "./header.scss";
@@ -12,6 +14,8 @@ import "./header.scss";
 const Header = () => {
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const ref = React.useRef();
+  useOnClickOutside(ref, () => setIsOpen(false));
 
   const {
     state: { cart },
@@ -38,7 +42,7 @@ const Header = () => {
           )}
         </div>
 
-        <div className="header__cart">
+        <div className="header__cart" ref={ref}>
           <BsCartDash
             onClick={() => setIsOpen(!isOpen)}
             style={{ cursor: "pointer" }}

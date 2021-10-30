@@ -46,9 +46,11 @@ const Cart = () => {
         )}
         <p>Shipping excluded</p>
 
-        <button>
-          checkout <BsFillBagCheckFill />
-        </button>
+        {cart.length && (
+          <button>
+            checkout <BsFillBagCheckFill />
+          </button>
+        )}
       </div>
     </div>
   );

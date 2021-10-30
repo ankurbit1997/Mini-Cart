@@ -99,6 +99,8 @@ header {
       }
 
       &__preview {
+        max-height: 300px;
+        overflow: auto;
         position: absolute;
         background-color: var(--color-secondary);
         font-size: 0.8rem;
@@ -109,6 +111,9 @@ header {
         top: 4rem;
         animation: cart 0.2s linear;
         text-align: center;
+        &::-webkit-scrollbar {
+          display: none;
+        }
 
         .cart-link {
           margin-top: 1rem;
