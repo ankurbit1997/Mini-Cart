@@ -10,6 +10,9 @@ const Cart = () => {
   const { state } = CartState();
 
   const { cart } = state;
+  React.useEffect(() => {
+    document.title = "Cart";
+  }, []);
 
   return (
     <div className="cart">
