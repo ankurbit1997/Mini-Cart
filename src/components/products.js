@@ -44,6 +44,7 @@ const SingleProduct = ({ product, dispatch, cart }) => {
 const Products = ({ products, dispatch, cart }) => {
   return (
     <div className="products">
+      {products.length === 0 && <h2>No Products</h2>}
       {products.map((product, i) => (
         <SingleProduct
           cart={cart}

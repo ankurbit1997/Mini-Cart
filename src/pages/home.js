@@ -7,7 +7,7 @@ import { CartState } from "../context/CartContext";
 import Filters from "../components/filters";
 
 const Home = () => {
-  const { state, dispatch } = CartState();
+  const { state, filterState, dispatch } = CartState();
 
   const [loading, setLoading] = useState(true);
 
@@ -22,17 +22,76 @@ const Home = () => {
   }, [dispatch]);
 
   const { products, cart } = state;
+  const {
+    byRating,
+    electronics,
+    jewelery,
+    mensClothing,
+    searchQuery,
+    sort,
+    womensClothing,
+  } = filterState;
 
   if (loading) {
     return <Loader />;
   }
+
+  const filterdProd = () => {
+    let sortedProducts = products;
+
+    if (sort) {
+      sortedProducts = sortedProducts.sort((a, b) =>
+        sort === "lowtohigh" ? a.price - b.price : b.price - a.price
+      );
+    }
+
+    if (mensClothing) {
+      sortedProducts = sortedProducts.filter(
+        (prod) => prod.category === "men's clothing"
+      );
+    }
+    if (womensClothing) {
+      sortedProducts = sortedProducts.filter(
+        (prod) => prod.category === "women's clothing"
+      );
+    }
+    if (electronics) {
+      sortedProducts = sortedProducts.filter(
+        (prod) => prod.category === "electronics"
+      );
+    }
+    if (jewelery) {
+      sortedProducts = sortedProducts.filter(
+        (prod) => prod.category === "jewelery"
+      );
+    }
+    if (byRating) {
+      sortedProducts = sortedProducts.filter(
+        (prod) => prod.rating.rate <= byRating
+      );
+    }
+    if (searchQuery) {
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    return sortedProducts;
+  };
+
+  let transformedProducts = filterdProd();
 
   return (
     <div>
       <Header />
       <div className="home-page">
         <Filters />
-        <Products products={products} cart={cart} dispatch={dispatch} />
+
+        <Products
+          products={transformedProducts}
+          cart={cart}
+          dispatch={dispatch}
+        />
       </div>
     </div>
   );

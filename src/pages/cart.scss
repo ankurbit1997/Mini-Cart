@@ -11,6 +11,12 @@
     flex-direction: row;
     justify-content: unset;
   }
+
+  .go-home-cart {
+    display: block;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
   &__list {
     background-color: white;
     padding: 1.5rem;
@@ -90,7 +96,6 @@
       }
     }
     button {
-      margin-left: 2rem;
       margin-top: 1.6rem;
       padding: 0.6rem 1.2rem;
       border-radius: 1.5rem;

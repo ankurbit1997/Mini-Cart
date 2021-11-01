@@ -22,7 +22,6 @@ const Header = () => {
     filterDispatch,
   } = CartState();
 
-  console.log(searchQuery);
   return (
     <header>
       <div className="header">
@@ -40,6 +39,7 @@ const Header = () => {
               })
             }
             value={searchQuery}
+            id="searchfield"
           />
           {searchQuery.length > 0 && (
             <GrFormClose

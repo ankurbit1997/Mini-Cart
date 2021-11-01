@@ -51,6 +51,10 @@ const Cart = () => {
             checkout <BsFillBagCheckFill />
           </button>
         )}
+
+        <Link className="go-home-cart" to="/">
+          Home
+        </Link>
       </div>
     </div>
   );
