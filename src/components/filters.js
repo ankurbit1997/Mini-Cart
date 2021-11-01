@@ -8,7 +8,7 @@ import Rating from "./rating";
 
 const Filters = () => {
   const {
-    filterState: { byRating },
+    filterState: { byRating, jewelery, sort },
     filterDispatch,
   } = CartState();
 
@@ -27,7 +27,10 @@ const Filters = () => {
             type="radio"
             label="ascending"
             name="group1"
-            onChange={() => filterDispatch({ type: "SORT_LOW_TO_HIGH" })}
+            onChange={() =>
+              filterDispatch({ type: "SORT_LOW_TO_HIGH", payload: "lowtohigh" })
+            }
+            checked={sort === "lowtohigh" ? true : false}
           />
           <label>Price Low To High</label>
         </div>
@@ -36,7 +39,10 @@ const Filters = () => {
             type="radio"
             label="descending"
             name="group1"
-            onChange={() => filterDispatch({ type: "SORT_HIGH_TO_LOW" })}
+            onChange={() =>
+              filterDispatch({ type: "SORT_HIGH_TO_LOW", payload: "hightolow" })
+            }
+            checked={sort === "hightolow" ? true : false}
           />
           <label>Price High To Low</label>
         </div>
@@ -60,7 +66,7 @@ const Filters = () => {
           <input
             type="checkbox"
             label="electronics"
-            onChange={() => filterDispatch({ type: "WOMENS_CLOTHING" })}
+            onChange={() => filterDispatch({ type: "ELECTRONICS" })}
           />
           <label>Electronics</label>
         </div>
@@ -68,7 +74,8 @@ const Filters = () => {
           <input
             type="checkbox"
             label="jewelery"
-            onChange={() => filterDispatch({ type: "WOMENS_CLOTHING" })}
+            onChange={() => filterDispatch({ type: "JEWELERY" })}
+            checked={jewelery}
           />
           <label>Jewelery</label>
         </div>

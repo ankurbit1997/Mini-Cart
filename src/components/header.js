@@ -12,15 +12,17 @@ import { CartState } from "../context/CartContext";
 import "./header.scss";
 
 const Header = () => {
-  const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const ref = React.useRef();
   useOnClickOutside(ref, () => setIsOpen(false));
 
   const {
     state: { cart },
+    filterState: { searchQuery },
+    filterDispatch,
   } = CartState();
 
+  console.log(searchQuery);
   return (
     <header>
       <div className="header">
@@ -31,12 +33,22 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search a Product"
-            onChange={(e) => setSearch(e.target.value)}
-            value={search}
+            onChange={(e) =>
+              filterDispatch({
+                type: "SEARCH_PRODUCT",
+                payload: e.target.value,
+              })
+            }
+            value={searchQuery}
           />
-          {search.length > 0 && (
+          {searchQuery.length > 0 && (
             <GrFormClose
-              onClick={() => setSearch("")}
+              onClick={() =>
+                filterDispatch({
+                  type: "SEARCH_PRODUCT",
+                  payload: "",
+                })
+              }
               className="header__search__empty"
             />
           )}

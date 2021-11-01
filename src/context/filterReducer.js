@@ -20,22 +20,22 @@ export const filterReducer = (state, action) => {
     case "MENS_CLOTHING":
       return {
         ...state,
-        mensClothing: !action.payload,
+        mensClothing: !state.mensClothing,
       };
     case "WOMENS_CLOTHING":
       return {
         ...state,
-        womensClothing: !action.payload,
+        womensClothing: !state.womensClothing,
       };
     case "ELECTRONICS":
       return {
         ...state,
-        electronics: !action.payload,
+        electronics: !state.electronics,
       };
     case "JEWELERY":
       return {
         ...state,
-        jewelery: !action.payload,
+        jewelery: !state.jewelery,
       };
     case "RATING":
       localStorage.setItem("rating", JSON.stringify(action.payload));
@@ -53,6 +53,7 @@ export const filterReducer = (state, action) => {
         womensClothing: false,
         electronics: false,
         jewelery: false,
+        sort: "",
       };
     default:
       return state;

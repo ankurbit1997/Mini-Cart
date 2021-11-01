@@ -16,6 +16,7 @@ const filtersInitialState = {
   womensClothing: false,
   electronics: false,
   jewelery: false,
+  sort: "",
 };
 
 const CartContext = ({ children }) => {
